@@ -1,0 +1,14 @@
+name: 'Mastodon Action'
+description: 'Toot a push'
+
+inputs:
+  client-id:
+    description: 'Client id'
+    required: true
+  client-secret:
+    description: 'Client secret'
+    required: true
+
+runs:
+  using: 'node12'
+  main: 'index.js'
