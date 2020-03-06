@@ -2,11 +2,8 @@ name: 'Mastodon Action'
 description: 'Toot a push'
 
 inputs:
-  client-id:
-    description: 'Client id'
-    required: true
-  client-secret:
-    description: 'Client secret'
+  mastodon-url: 
+    description: 'URL of Mastodon instance'
     required: true
 
 runs:

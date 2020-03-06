@@ -1708,15 +1708,27 @@ function checkMode (stat, options) {
 
 const core = __webpack_require__(694);
 const github = __webpack_require__(30);
-
 const axios = __webpack_require__(227);
 
+let instanceURL = core.getInput('mastodon-url');
+let token = process.env.TOKEN;
 
-const clientID = core.getInput('client-id');
-const clientSecret = core.getInput('client-secret');
+const pushAction = async () => {
 
-console.log(`Client id: ${clientID}, client secret ${clientSecret}`);
+    await axios.post(`https://${instanceURL}/api/v1/statuses`,
+        {
+            status: 'Test status from js',
+        },
+        {
+            headers: { Authorization: `Bearer ${token}` },
+        },
+    );
+}
 
+pushAction()
+    .catch(error => {
+        console.error('Could not toot push')
+    });
 
 /***/ }),
 

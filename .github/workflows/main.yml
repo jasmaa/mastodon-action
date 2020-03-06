@@ -7,6 +7,7 @@ jobs:
     steps:
       - name: Mastodon notification
         uses: jasmaa/mastodon-action@master
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
         with:
-          client-id: test client id
-          client-secret: test client secret
+          mastodon-url: mastodon.social
