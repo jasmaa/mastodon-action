@@ -11,3 +11,4 @@ jobs:
           TOKEN: ${{ secrets.TOKEN }}
         with:
           mastodon-url: mastodon.social
+          message: New commit to mastodon-action!

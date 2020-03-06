@@ -1,5 +1,5 @@
 name: Mastodon Action
-description: Toot a push
+description: Toots the head commit on push
 
 inputs:
   mastodon-url: 
