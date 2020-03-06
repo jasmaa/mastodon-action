@@ -11,7 +11,7 @@ const pushAction = async () => {
 
     await axios.post(`https://${instanceURL}/api/v1/statuses`,
         {
-            status: `${message} ${process.env.GITHUB_REPOSITORY}`,
+            status: `${message}\n${context.payload.head_commit.url}`,
         },
         {
             headers: { Authorization: `Bearer ${token}` },
@@ -23,6 +23,3 @@ pushAction()
     .catch(error => {
         console.error('Could not toot push')
     });
-
-console.log(process.env.GITHUB_REPOSITORY);
-console.log(context);
