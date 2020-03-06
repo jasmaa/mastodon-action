@@ -1710,14 +1710,16 @@ const core = __webpack_require__(694);
 const github = __webpack_require__(30);
 const axios = __webpack_require__(227);
 
-let instanceURL = core.getInput('mastodon-url');
-let token = process.env.TOKEN;
+const instanceURL = core.getInput('mastodon-url');
+const message = core.getInput('message');
+const token = process.env.TOKEN;
+const context = github.context;
 
 const pushAction = async () => {
 
     await axios.post(`https://${instanceURL}/api/v1/statuses`,
         {
-            status: 'Test status from js',
+            status: `${message} ${process.env.GITHUB_REPOSITORY}`,
         },
         {
             headers: { Authorization: `Bearer ${token}` },
@@ -1729,6 +1731,9 @@ pushAction()
     .catch(error => {
         console.error('Could not toot push')
     });
+
+console.log(process.env.GITHUB_REPOSITORY);
+console.log(context);
 
 /***/ }),
 
