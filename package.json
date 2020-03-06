@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "lint": "eslint index.js",
+    "package": "ncc build index.js -o dist",
+    "test": "eslint index.js && jest"
+  },
   "dependencies": {
     "@actions/core": "^1.2.3",
     "@actions/github": "^2.1.1",
