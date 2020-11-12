@@ -2,7 +2,7 @@
 
 GitHub Action that toots the head commit on push
 
-# Usage
+## Usage
 
 Register an application on your Mastodon instance
 and add the access token as a secret to your repository.
@@ -16,7 +16,7 @@ Then add the following to your pipeline:
           mastodon-url: mastodon.social
           message: New commit!
 
-# Development
+## Development
 
     npm i -g @zeit/ncc
     yarn install
