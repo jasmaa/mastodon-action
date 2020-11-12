@@ -2,8 +2,9 @@ name: Main
 on: [push]
 
 jobs:
-  build:
+  notify:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
     steps:
       - name: Mastodon notification
         uses: jasmaa/mastodon-action@master
